@@ -1,9 +1,15 @@
-import textnode
+from files import generate_pages_recursive, copy_dir
 
 def main():
-    text_type = textnode.TextType.BOLD
-    text_node = textnode.TextNode("test text",text_type,"https://localhost:8888")
-    print(text_node)
+    copy_dir("static","public")
+    generate_pages_recursive(source_path= "content",
+                  template_path= "template.html",
+                  destination_path= "public")
+
+
+
+
+
 
 
 if __name__ == "__main__":
